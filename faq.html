@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elevate Your Game</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body {
+            background-color: #1C140B;
+            color: white;
+        }
+        section {
+            min-height: 100vh;
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .title {
+            font-size: 3rem;
+            margin: 2rem 0;
+
+        }
+        .faq {
+            max-width: 700px;
+            margin-top: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid white;
+            cursor: pointer;
+        }
+        .question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .questions h3 {
+            font-size: 1.8rem;
+        }
+        .answer p {
+            padding-top: 1rem;
+            line-height: 1.6;
+            font-size: 1.4rem;
+        }
+        .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 1.4s ease;
+        }
+        .faq.active .answer {
+            max-height: 300px;
+            animation: fade 1s ease-in-out;
+        }
+        .faq.active i {
+            transform: rotate(180deg);
+        }
+        i {
+            transition: transform 0.5s ease-in;
+        }
+        @keyframes fade {
+            from {
+                opacity: 0;
+                transform: translateY(-10px)
+            }
+        }
+
+
+
+        /* Navigation Bar */
+        .navbar {
+            width: 90vw;
+            height: auto;
+            padding: 30px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 2;
+        }
+        .logo {
+            width: 160px;
+            margin-top: -10px;
+            cursor: pointer;
+        }
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 20px;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            font-weight: 600;
+            padding: 15px
+        }
+        li a:hover {
+            background: darkorange;
+            transition: 0.5s;
+        }
+        button:hover {
+            color: white
+        }
+        .navbar a:hover {
+            color: white;
+        }
+        @media (max-width:1000px) {
+            .navbar {
+                padding: 20px 50px;
+            }
+        }
+        @media (max-width:700px) {
+            .navbar {
+                padding: 20px 50px;
+            }
+        }
+        .navbar li {
+            margin: 0 7px;
+        }
+
+
+        /* Background Image */
+        .banner {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+        }
+        .banner #FAQPageBackground {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: auto;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: -1;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a2c6f944d9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="banner">
+    <img id="FAQPageBackground" src="FAQ%20Page%20Background.jpg" alt="Basketball Image">
+    <div class="navbar">
+        <img class="logo" src="Elevate_Your_Game_Logo.png">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">Learn More</a></li>
+        </ul>
+    </div>
+
+    <section>
+        <h2 class="title">Frequently Asked Questions</h2>
+
+        <div class="faq">
+            <div class="question">
+                <h3>Are the training sessions customizable?</h3>
+
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="answer">
+                <p>
+                    Yes each training session is customized based on the players skill set and area of focus in which they are willing to put the hard work and effort to turn their weaknesses into strengths.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                <h3>What ages do you work with?</h3>
+
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="answer">
+                <p>
+                    Our comprehensive training programs are meticulously designed to cater to a broad spectrum of young athletes, ranging from those as young as 7 years old up through collegiate-level players who are as old as 22 years of age.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                <h3>How many players train together?</h3>
+
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="answer">
+                <p>
+                    Training sessions are typically 1 on 1 sessions to maximize training repetition.  In some cases clients have requested 2-3 player small group workouts which is price negotiable depending on the ages of the players.  I recommend 1 on 1 sessions to maximize ball touches for the full 60 minute workout.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                <h3>Where are the training sessions?</h3>
+
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="answer">
+                <p>
+                    All 1 on 1 or small group training sessions are conducted at Elevate Your Game’s personal outdoor half-court basketball court.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                <h3>When are the training sessions?</h3>
+
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="answer">
+                <p>
+                    All training sessions are by appointment only.  Please contact me for availability as I conduct training sessions nearly every day of the week weather permitting.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                <h3>Is training equipment used and included during training sessions with no additional cost?</h3>
+
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="answer">
+                <p>
+                    Yes, depending on the skill that is being worked on, all applicable training equipment will be provided and used during the training session at no additional charge.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                <h3>Are contracts required per client?</h3>
+
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="answer">
+                <p>
+                    Yes before training sessions begin, each client will be required to sign a customer service agreement and a release of liability waiver.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                <h3>Do you train college basketball players?</h3>
+
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="answer">
+                <p>
+                    Yes I do train college basketball players.  I have trained JUCO, Division I, II and III athletes.
+                </p>
+            </div>
+        </div>
+
+        <div class="faq">
+            <div class="question">
+                <h3>What makes Elevate Your Game different than other training companies?</h3>
+
+                <i class="fa-solid fa-caret-down"></i>
+            </div>
+            <div class="answer">
+                <p>
+                    I truly care about the progression and development of the youth athlete both physically and mentally.  I love the sport of basketball at all levels and focus on small details to maximize results.  I also enjoy sharing my knowledge of the game I love, with youth athletes that also have the same interest. Training sessions will keep the athletes attention and the level of intensity will increase as the players age and fundamental skill set increases.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const faqs =document.querySelectorAll(".faq");
+
+        faqs.forEach((faq) => {
+            faq.addEventListener("click", () => {
+                faq.classList.toggle("active");
+            });
+        });
+    </script>
+</div>
+</body>
+</html>
