@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elevate Your Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body {
+            background-color: #1C140B;
+        }
+        .contact {
+            position: relative;
+            min-height: 100vh;
+            padding: 50px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .contact .content{
+            max-width: 800px;
+            text-align: center;
+        }
+        .contact .content h2{
+            font-size: 36px;
+            font-weight: 500;
+            color:#fff;
+        }
+        .contact .content p{
+            font-weight: 300;
+            color:#fff;
+        }
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 250px;
+        }
+        .container .contactInfo {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        .container .contactInfo .box{
+            position: relative;
+            padding: 20px 0;
+            display: flex;
+        }
+        .container .contactInfo .box .icon {
+            min-width: 60px;
+            height: 60px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 22px;
+        }
+        .container .contactInfo .box .text {
+            display: flex;
+            margin-left: 20px;
+            font-size: 16px;
+            color: #fff;
+            flex-direction: column;
+            font-weight: 300;
+        }
+        .container .contactInfo .box .text h3 {
+            font-weight: 500;
+            color: darkorange;
+        }
+        .contactForm {
+            width: 40%;
+            padding: 40px;
+            background: #fff;
+        }
+        .contactForm h2 {
+            font-size: 30px;
+            color: #333;
+            font-weight: 500;
+        }
+        .contactForm .inputBox {
+            position: relative;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .contactForm .inputBox input,
+        .contactForm .inputBox textarea {
+            width: 100%;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            border: none;
+            border-bottom: 2px solid #333;
+            outline: none;
+            resize: none;
+        }
+        .contactForm .inputBox span {
+            position: absolute;
+            left: 0;
+            padding: 5px 0;
+            font-size: 16px;
+            margin: 10px 0;
+            pointer-events: none;
+            transition: 0.5s;
+            color: #666;
+        }
+        .contactForm .inputBox input:focus ~ span,
+        .contactForm .inputBox input:valid ~ span,
+        .contactForm .inputBox textarea:focus ~ span,
+        .contactForm .inputBox textarea:valid ~ span{
+            color: darkorange;
+            font-size: 12px;
+            transform: translateY(-20px);
+        }
+        .contactForm .inputBox input[type="submit"] {
+            width: 100px;
+            background: darkorange;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 18px;
+        }
+        #instagram {
+            color: white;
+            text-decoration: none;
+        }
+        #facebook {
+            color: white;
+            text-decoration: none;
+        }
+        @media (max-width: 991px) {
+            .contact {
+                padding: 50px;
+            }
+            .container {
+                flex-direction: column;
+            }
+            .container .contactInfo {
+                margin-bottom: 40px;
+            }
+            .container .contactInfo,
+            .contactForm {
+                width: 100%;
+            }
+        }
+
+
+
+        /* Navigation Bar */
+        .navbar {
+            width: 90vw;
+            height: auto;
+            padding: 30px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 2;
+        }
+        .logo {
+            width: 160px;
+            margin-top: -10px;
+            cursor: pointer;
+        }
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 20px;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            font-weight: 600;
+            padding: 15px
+        }
+        li a:hover {
+            background: darkorange;
+            transition: 0.5s;
+        }
+        button:hover {
+            color: white
+        }
+        .navbar a:hover {
+            color: white;
+        }
+        @media (max-width:1000px) {
+            .navbar {
+                padding: 20px 50px;
+            }
+        }
+        @media (max-width:700px) {
+            .navbar {
+                padding: 20px 50px;
+            }
+        }
+        .navbar li {
+            margin: 0 7px;
+        }
+
+
+        /* Background Image */
+        .banner {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+        }
+        .banner #ContactUsBackground {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: auto;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: -1;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a2c6f944d9.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="banner">
+    <img id="ContactUsBackground" src="Contact%20Us%20Page%20Background.jpg" alt="Basketball Image">
+    <div class="navbar">
+        <img class="logo" src="Elevate_Your_Game_Logo.png" alt="Elevate Your Game Logo">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="../../../../Documents/GitHub/ElevateYourGame.github.io/pages/about.html">Learn More</a></li>
+        </ul>
+    </div>
+
+    <section class="contact">
+        <div class="container">
+            <div class="contactInfo">
+                <div class="box">
+                    <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+                    <div class="text">
+                        <h3>Instagram</h3>
+                        <p ><a id="instagram" href="https://www.instagram.com/elevateyourgamellc/">Click Here</a></p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa-brands fa-facebook"></i></div>
+                    <div class="text">
+                        <h3>Facebook</h3>
+                        <p ><a id="facebook" href="https://www.instagram.com/elevateyourgamellc/">Click Here</a></p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div class="text">
+                        <h3>Email</h3>
+                        <p>fsarchiapone@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="contactForm">
+                <form action="https://formsubmit.co/fsarchiapone@gmail.com" method="POST">
+                    <h2>Send Message</h2>
+                    <div class="inputBox">
+                        <input type="text" name="name" required="required">
+                        <span>Full Name</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="text" name="email" required="required">
+                        <span>Email</span>
+                    </div>
+                    <div class="inputBox">
+                        <textarea name="msg" required="required"></textarea>
+                        <span>Type your Message...</span>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
