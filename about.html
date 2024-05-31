@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Elevate Your Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body {
+            width: 100%;
+            height: 100%;
+            background-image: url("https://images.pexels.com/photos/6535166/pexels-photo-6535166.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+        }
+        .info-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+        }
+        .info-image, .info-text {
+            flex: 1;
+            padding: 20px;
+        }
+        .info-image img {
+            width: 100%;
+            height: auto;
+        }
+        .info-image {
+            max-width: 600px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .info-text {
+            flex: 1;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            line-height: 1.6;
+            font-size: 18px;
+            color: black
+        }
+        .info-text h2 {
+            font-size: 50px;
+            color: white
+        }
+        @media (max-width: 600px) {
+            .info-container {
+                flex-direction: column;
+            }
+
+            .info-image {
+                max-width: 100%;
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .info-text {
+                max-width: 100%;
+            }
+        }
+
+
+        /*Navigation Bar*/
+        .navbar {
+            width: 90vw;
+            height: auto;
+            padding: 30px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 2;
+        }
+        .logo {
+            width: 160px;
+            margin-top: -10px;
+            cursor: pointer;
+        }
+        .navbar ul li {
+            list-style: none;
+            display: inline-block;
+            margin: 20px;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: white;
+            font-weight: 600;
+            padding: 15px
+        }
+        li a:hover {
+            background: darkorange;
+            transition: 0.5s;
+        }
+        button:hover {
+            color: white
+        }
+        .navbar a:hover {
+            color: white;
+        }
+        @media (max-width:1000px) {
+            .navbar {
+                padding: 20px 50px;
+            }
+        }
+        @media (max-width:700px) {
+            .navbar {
+                padding: 20px 50px;
+            }
+        }
+        .navbar li {
+            margin: 0 7px;
+        }
+
+        /*Background Image*/
+        .banner {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+        }
+        .banner .LearnMoreImage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: auto;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+<div class="banner">
+    <div class="navbar">
+        <img class="logo" src="Elevate_Your_Game_Logo.png">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="about.html">Learn More</a></li>
+        </ul>
+    </div>
+
+    <div class="info-container">
+        <div class="info-image">
+            <img src="About%20Image.jpg" alt="About Image"/>
+        </div>
+        <div class="info-text">
+            <h2>About</h2>
+            <p>
+                Elevate Your Game, LLC is a services company specializing in basketball training for youth athletes.  My primary goals are aimed at developing fundamental basketball skills while having fun and building self-confidence.  Elevate Your Game was started because I have a passion for the sport of basketball and love working with youth athletes to raise their skill set. Elevate Your Game offers a fun and positive experience, customizable training programs at affordable prices backed by years of basketball playing and coaching experience. If this seems like the basketball experience you want for your youth player, please contact me.
+            </p>
+        </div>
+    </div>
+
+    <div class="info-container">
+
+        <div class="info-text">
+            <h2>Services Offered:</h2>
+            <p>1. Enhancing your shooting technique through focused and repetitive practice.<br>2. Developing your dribbling skills with targeted drills and exercises.
+                <br>3. Improving your rebound proficiency by practicing timing and positioning.
+                <br>4. Learning advanced passing techniques to better distribute the ball.
+                <br>5. Training in defensive strategies and tactics to strengthen your on-court presence.
+                <br>6. Conditioning your core strength to improve overall athletic performance.
+            </p>
+        </div>
+        <div class="info-image">
+            <img src="Services%20Image.jpg" alt="Services Image"/>
+        </div>
+    </div>
+
+    <div class="info-container">
+        <div class="info-image">
+            <img src="Staff%20image.jpg" alt="Staff Image"/>
+        </div>
+        <div class="info-text">
+            <h2>Staff</h2>
+            <p>
+                Hi there, I am a former Baltimore Dream basketball player with 23 plus years of basketball coaching experience.  I am a certified basketball coach that has coached at various levels for both boys and girls.  I focus on improving and developing basketball fundamentals. I love helping youth athletes grow their game by focusing on building a strong fundamental foundation.  My areas of expertise are shooting and dribbling but love coaching all aspects of the game.  I am always excited to train players that have the will and heart it requires to play defense.  Being a former basketball Director, I have evaluated and worked with over thousands of youth athletes and have even written training progression curriculums designed to help youth coaches improve.  Currently I am a MIAA varsity assistant coach at Annapolis Area Christian Upper School.  When I am not training players or coaching basketball, I am typically doing a variety of activities with my wife and three children.  Want to work together?  I’d love to hear from you.
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
