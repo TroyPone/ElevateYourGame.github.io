@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Elevate Your Game</title>
     <style>
         * {
@@ -22,35 +23,38 @@
             align-items: center;
             flex-direction: column;
         }
-        .contact .content{
+        .contact .content {
             max-width: 800px;
             text-align: center;
         }
-        .contact .content h2{
+        .contact .content h2 {
             font-size: 36px;
             font-weight: 500;
-            color:#fff;
+            color: #fff;
         }
-        .contact .content p{
+        .contact .content p {
             font-weight: 300;
-            color:#fff;
+            color: #fff;
         }
         .container {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 250px;
+            flex-wrap: wrap;
         }
         .container .contactInfo {
-            width: 50%;
+            width: 45%;
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 40px;
         }
-        .container .contactInfo .box{
+        .container .contactInfo .box {
             position: relative;
             padding: 20px 0;
             display: flex;
+            align-items: center;
         }
         .container .contactInfo .box .icon {
             min-width: 60px;
@@ -61,10 +65,10 @@
             align-items: center;
             border-radius: 50%;
             font-size: 22px;
+            margin-right: 20px;
         }
         .container .contactInfo .box .text {
             display: flex;
-            margin-left: 20px;
             font-size: 16px;
             color: #fff;
             flex-direction: column;
@@ -75,14 +79,16 @@
             color: darkorange;
         }
         .contactForm {
-            width: 40%;
+            width: 45%;
             padding: 40px;
             background: #fff;
+            border-radius: 8px;
         }
         .contactForm h2 {
             font-size: 30px;
             color: #333;
             font-weight: 500;
+            margin-bottom: 20px;
         }
         .contactForm .inputBox {
             position: relative;
@@ -113,7 +119,7 @@
         .contactForm .inputBox input:focus ~ span,
         .contactForm .inputBox input:valid ~ span,
         .contactForm .inputBox textarea:focus ~ span,
-        .contactForm .inputBox textarea:valid ~ span{
+        .contactForm .inputBox textarea:valid ~ span {
             color: darkorange;
             font-size: 12px;
             transform: translateY(-20px);
@@ -142,16 +148,15 @@
             .container {
                 flex-direction: column;
             }
-            .container .contactInfo {
-                margin-bottom: 40px;
-            }
             .container .contactInfo,
             .contactForm {
                 width: 100%;
+                max-width: 400px;
+            }
+            .contactForm {
+                margin-bottom: 40px;
             }
         }
-
-
 
         /* Navigation Bar */
         .navbar {
@@ -169,6 +174,10 @@
             margin-top: -10px;
             cursor: pointer;
         }
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+        }
         .navbar ul li {
             list-style: none;
             display: inline-block;
@@ -179,32 +188,52 @@
             text-transform: uppercase;
             color: white;
             font-weight: 600;
-            padding: 15px
+            padding: 15px;
         }
         li a:hover {
             background: darkorange;
             transition: 0.5s;
         }
         button:hover {
-            color: white
+            color: white;
         }
         .navbar a:hover {
             color: white;
         }
-        @media (max-width:1000px) {
+        .menu-icon {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: white;
+        }
+        @media (max-width: 1000px) {
             .navbar {
-                padding: 20px 50px;
+                padding: 20px;
             }
         }
-        @media (max-width:700px) {
-            .navbar {
-                padding: 20px 50px;
+        @media (max-width: 700px) {
+            .menu-icon {
+                display: block;
+            }
+            .navbar ul {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                top: 80px; /* Adjust based on your navbar height */
+                left: 0;
+                padding: 20px 0;
+                z-index: 3; /* Ensuring the menu is above other content */
+            }
+            .navbar ul.active {
+                display: flex;
+            }
+            .navbar ul li {
+                margin: 15px 0;
             }
         }
-        .navbar li {
-            margin: 0 7px;
-        }
-
 
         /* Background Image */
         .banner {
@@ -223,6 +252,14 @@
             object-fit: cover;
             z-index: -1;
         }
+        @media (max-width: 500px) {
+            .contact .content h2 {
+                font-size: 28px;
+            }
+            .contactForm h2 {
+                font-size: 26px;
+            }
+        }
     </style>
     <script src="https://kit.fontawesome.com/a2c6f944d9.js" crossorigin="anonymous"></script>
 </head>
@@ -231,12 +268,13 @@
     <img id="ContactUsBackground" src="Contact%20Us%20Page%20Background.jpg" alt="Basketball Image">
     <div class="navbar">
         <img class="logo" src="Elevate_Your_Game_Logo.png" alt="Elevate Your Game Logo">
-        <ul>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="about.html">Learn More</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
         </ul>
     </div>
 
@@ -247,14 +285,14 @@
                     <div class="icon"><i class="fa-brands fa-instagram"></i></div>
                     <div class="text">
                         <h3>Instagram</h3>
-                        <p ><a id="instagram" href="https://www.instagram.com/elevateyourgamellc/">Click Here</a></p>
+                        <p><a id="instagram" href="https://www.instagram.com/elevateyourgamellc/">Click Here</a></p>
                     </div>
                 </div>
                 <div class="box">
                     <div class="icon"><i class="fa-brands fa-facebook"></i></div>
                     <div class="text">
                         <h3>Facebook</h3>
-                        <p ><a id="facebook" href="https://www.facebook.com/people/Elevate-Your-Game-LLC/100063678421620/?modal=admin_todo_tour">Click Here</a></p>
+                        <p><a id="facebook" href="https://www.facebook.com/people/Elevate-Your-Game-LLC/100063678421620/?modal=admin_todo_tour">Click Here</a></p>
                     </div>
                 </div>
                 <div class="box">
@@ -288,5 +326,11 @@
         </div>
     </section>
 </div>
+<script>
+    function toggleMenu() {
+        var navLinks = document.getElementById("nav-links");
+        navLinks.classList.toggle("active");
+    }
+</script>
 </body>
 </html>
