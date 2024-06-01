@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Elevate Your Game</title>
     <style>
         * {
@@ -20,52 +21,46 @@
             align-items: center;
             justify-content: space-between;
             text-align: left;
+            flex-wrap: wrap;
+            margin: 20px;
         }
         .info-image, .info-text {
             flex: 1;
             padding: 20px;
+            box-sizing: border-box;
         }
         .info-image img {
             width: 100%;
             height: auto;
         }
-        .info-image {
-            max-width: 600px;
-            height: auto;
-            margin-right: 20px;
-        }
         .info-text {
             flex: 1;
-            padding: 0 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             line-height: 1.6;
             font-size: 18px;
-            color: black
+            color: white;
         }
         .info-text h2 {
-            font-size: 50px;
-            color: white
+            font-size: 36px;
+            color: white;
+            margin-bottom: 20px;
         }
         @media (max-width: 600px) {
             .info-container {
                 flex-direction: column;
+                text-align: center;
             }
-
             .info-image {
-                max-width: 100%;
-                margin-right: 0;
                 margin-bottom: 20px;
             }
-
             .info-text {
-                max-width: 100%;
+                text-align: center;
             }
         }
 
-
-        /*Navigation Bar*/
+        /* Navigation Bar */
         .navbar {
             width: 90vw;
             height: auto;
@@ -81,6 +76,10 @@
             margin-top: -10px;
             cursor: pointer;
         }
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+        }
         .navbar ul li {
             list-style: none;
             display: inline-block;
@@ -91,33 +90,54 @@
             text-transform: uppercase;
             color: white;
             font-weight: 600;
-            padding: 15px
+            padding: 15px;
         }
         li a:hover {
             background: darkorange;
             transition: 0.5s;
         }
         button:hover {
-            color: white
+            color: white;
         }
         .navbar a:hover {
             color: white;
         }
-        @media (max-width:1000px) {
+        .menu-icon {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: white;
+        }
+        @media (max-width: 1000px) {
             .navbar {
-                padding: 20px 50px;
+                padding: 20px;
             }
         }
-        @media (max-width:700px) {
-            .navbar {
-                padding: 20px 50px;
+        @media (max-width: 700px) {
+            .menu-icon {
+                display: block;
             }
-        }
-        .navbar li {
-            margin: 0 7px;
+            .navbar ul {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                top: 80px; /* Adjust based on your navbar height */
+                left: 0;
+                padding: 20px 0;
+                z-index: 3;
+            }
+            .navbar ul.active {
+                display: flex;
+            }
+            .navbar ul li {
+                margin: 15px 0;
+            }
         }
 
-        /*Background Image*/
+        /* Background Image */
         .banner {
             position: relative;
             height: 100vh;
@@ -135,17 +155,24 @@
             z-index: -1;
         }
     </style>
+    <script>
+        function toggleMenu() {
+            var navLinks = document.getElementById("nav-links");
+            navLinks.classList.toggle("active");
+        }
+    </script>
 </head>
 <body>
 <div class="banner">
     <div class="navbar">
         <img class="logo" src="Elevate_Your_Game_Logo.png">
-        <ul>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="about.html">Learn More</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
         </ul>
     </div>
 
@@ -162,14 +189,15 @@
     </div>
 
     <div class="info-container">
-
         <div class="info-text">
             <h2>Services Offered:</h2>
-            <p>1. Enhancing your shooting technique through focused and repetitive practice.<br>2. Developing your dribbling skills with targeted drills and exercises.
-                <br>3. Improving your rebound proficiency by practicing timing and positioning.
-                <br>4. Learning advanced passing techniques to better distribute the ball.
-                <br>5. Training in defensive strategies and tactics to strengthen your on-court presence.
-                <br>6. Conditioning your core strength to improve overall athletic performance.
+            <p>1. Shooting Training
+                <br>2. Dribbling Training
+                <br>3. Rebound Training
+                <br>4. Passing Training
+                <br>5. Defensive Training
+                <br>6. Core Conditioning
+                <br>7. Agility Training
             </p>
         </div>
         <div class="info-image">
@@ -184,7 +212,7 @@
         <div class="info-text">
             <h2>Staff</h2>
             <p>
-                Hi there, I am a former Baltimore Dream basketball player with 23 plus years of basketball coaching experience.  I am a certified basketball coach that has coached at various levels for both boys and girls.  I focus on improving and developing basketball fundamentals. I love helping youth athletes grow their game by focusing on building a strong fundamental foundation.  My areas of expertise are shooting and dribbling but love coaching all aspects of the game.  I am always excited to train players that have the will and heart it requires to play defense.  Being a former basketball Director, I have evaluated and worked with over thousands of youth athletes and have even written training progression curriculums designed to help youth coaches improve.  Currently I am a MIAA varsity assistant coach at Annapolis Area Christian Upper School.  When I am not training players or coaching basketball, I am typically doing a variety of activities with my wife and three children.  Want to work together?  I’d love to hear from you.
+                Hi there, I am a former Baltimore Dream basketball player with 24 plus years of basketball coaching experience.  I am a certified basketball coach that has coached at various levels for both boys and girls.  I focus on improving and developing basketball fundamentals. I love helping youth athletes grow their game by focusing on building a strong fundamental foundation.  My areas of expertise are shooting and dribbling but love coaching all aspects of the game.  I am always excited to train players that have the will and heart it requires to play defense.  Being a former basketball Director, I have evaluated and worked with over thousands of youth athletes and have even written training progression curriculums designed to help youth coaches improve.  Currently I am a MIAA varsity assistant coach at Annapolis Area Christian Upper School.  When I am not training players or coaching basketball, I am typically doing a variety of activities with my wife and three children.  Want to work together?  I’d love to hear from you.
             </p>
         </div>
     </div>
