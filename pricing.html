@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Elevate Your Game</title>
     <style>
         * {
@@ -18,11 +19,11 @@
         }
         .pricing-table {
             display: flex;
-            align-items: flex-start;
             flex-wrap: wrap;
             justify-content: space-around;
             margin: auto;
             z-index: 2;
+            padding: 20px;
         }
         .pricing-card {
             flex: 1;
@@ -79,16 +80,19 @@
             transition: .3s linear;
         }
         .order-btn {
-            background-color: #fff;
+            background-color: white;
             color: darkorange;
-            border: 2px solid darkorange;
         }
-        @media screen and (max-width:1100px) {
+        @media screen and (max-width: 1100px) {
             .pricing-card {
-                flex: 50%;
+                flex: 45%;
             }
         }
-
+        @media screen and (max-width: 700px) {
+            .pricing-card {
+                flex: 100%;
+            }
+        }
 
         /* Navigation Bar */
         .navbar {
@@ -106,6 +110,10 @@
             margin-top: -10px;
             cursor: pointer;
         }
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+        }
         .navbar ul li {
             list-style: none;
             display: inline-block;
@@ -116,32 +124,51 @@
             text-transform: uppercase;
             color: white;
             font-weight: 600;
-            padding: 15px
+            padding: 15px;
         }
         li a:hover {
             background: darkorange;
             transition: 0.5s;
         }
         button:hover {
-            color: white
+            color: white;
         }
         .navbar a:hover {
             color: white;
         }
-        @media (max-width:1000px) {
+        .menu-icon {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: white;
+        }
+        @media (max-width: 1000px) {
             .navbar {
-                padding: 20px 50px;
+                padding: 20px;
             }
         }
-        @media (max-width:700px) {
-            .navbar {
-                padding: 20px 50px;
+        @media (max-width: 700px) {
+            .menu-icon {
+                display: block;
+            }
+            .navbar ul {
+                flex-direction: column;
+                display: none;
+                width: 100%;
+                text-align: center;
+                background-color: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                top: 80px; /* Adjust based on your navbar height */
+                left: 0;
+                padding: 20px 0;
+            }
+            .navbar ul.active {
+                display: flex;
+            }
+            .navbar ul li {
+                margin: 15px 0;
             }
         }
-        .navbar li {
-            margin: 0 7px;
-        }
-
 
         /* Background Image */
         .banner {
@@ -159,6 +186,19 @@
             object-fit: cover;
             z-index: -1;
         }
+        @media (max-width: 500px) {
+            .price {
+                font-size: 50px;
+            }
+            .price sup, .price span {
+                font-size: 18px;
+            }
+            .order-btn {
+                margin-top: 40px;
+                padding: 12px 30px;
+                font-size: 14px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -166,12 +206,13 @@
     <img id="PricingBackground" src="Pricing_Page_Background.jpg" alt="Basketball Image">
     <div class="navbar">
         <img class="logo" src="Elevate_Your_Game_Logo.png" alt="Elevate Your Game Image">
-        <ul>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="faq.html">FAQ</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="about.html">Learn More</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About</a></li>
         </ul>
     </div>
 
@@ -181,7 +222,6 @@
             <div class="price"><sup>$</sup>50<span>/HR</span></div>
             <ul>
                 <li>One hour 1 on 1 training session</li>
-                <li></li>
             </ul>
             <a href="contact.html" class="order-btn">Contact Now</a>
         </div>
@@ -189,11 +229,17 @@
             <h3 class="pricing-card-header">Option 2</h3>
             <div class="price"><sup>$</sup>40<span>/HR</span></div>
             <ul>
-                <li>One hour 1 on 1 training sessions for families that are training 2 or more athletes. </li>
+                <li>One hour 1 on 1 training session for families that are training 2 or more athletes.</li>
             </ul>
             <a href="contact.html" class="order-btn">Contact Now</a>
         </div>
     </div>
 </div>
+<script>
+    function toggleMenu() {
+        var navLinks = document.getElementById("nav-links");
+        navLinks.classList.toggle("active");
+    }
+</script>
 </body>
 </html>
